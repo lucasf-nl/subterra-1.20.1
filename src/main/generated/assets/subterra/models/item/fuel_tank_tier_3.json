@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "subterra:item/fuel_tank_tier_3"
+  }
+}

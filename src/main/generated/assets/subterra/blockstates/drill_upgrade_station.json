@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "subterra:block/drill_upgrade_station"
+    }
+  }
+}

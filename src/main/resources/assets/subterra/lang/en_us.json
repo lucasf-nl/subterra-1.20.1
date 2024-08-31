@@ -1,0 +1,86 @@
+{
+    "block.subterra.enderite_ore": "Enderite Ore",
+    "block.subterra.aragonite_ore": "Aragonite Ore",
+    "block.subterra.infernite_ore": "Infernite Ore",
+    
+
+    "item.subterra.raw_enderite": "Raw Enderite",
+    "item.subterra.enderite_ingot": "Enderite Ingot",
+    "item.subterra.raw_aragonite": "Raw Aragonite",
+    "item.subterra.aragonite_ingot": "Aragonite Ingot",
+    "item.subterra.raw_infernite": "Raw Infernite",
+    "item.subterra.infernite_ingot": "Infernite Ingot",
+
+
+    "item.subterra.enderite_stick": "Enderite Stick",
+    "item.subterra.aragonite_stick": "Aragonite Stick",
+    "item.subterra.infernite_stick": "Infernite Stick",
+    
+
+    "item.subterra.enderite_sword": "Enderite Sword",
+    "item.subterra.enderite_pickaxe": "Enderite Pickaxe",
+    "item.subterra.enderite_drill": "Enderite Drill",
+    "item.subterra.enderite_axe": "Enderite Axe",
+    "item.subterra.enderite_shovel": "Enderite Shovel",
+    "item.subterra.enderite_hoe": "Enderite Hoe",
+
+    "item.subterra.enderite_helmet": "Enderite Helmet",
+    "item.subterra.enderite_chestplate": "Enderite Chestplate",
+    "item.subterra.enderite_leggings": "Enderite Leggings",
+    "item.subterra.enderite_boots": "Enderite Boots",
+
+
+    "item.subterra.aragonite_sword": "Aragonite Sword",
+    "item.subterra.aragonite_pickaxe": "Aragonite Pickaxe",
+    "item.subterra.aragonite_drill": "Aragonite Drill",
+    "item.subterra.aragonite_axe": "Aragonite Axe",
+    "item.subterra.aragonite_shovel": "Aragonite Shovel",
+    "item.subterra.aragonite_hoe": "Aragonite Hoe",
+
+    "item.subterra.aragonite_helmet": "Aragonite Helmet",
+    "item.subterra.aragonite_chestplate": "Aragonite Chestplate",
+    "item.subterra.aragonite_leggings": "Aragonite Leggings",
+    "item.subterra.aragonite_boots": "Aragonite Boots",
+
+    
+    "item.subterra.infernite_helmet": "Infernite Helmet",
+    "item.subterra.infernite_chestplate": "Infernite Chestplate",
+    "item.subterra.infernite_leggings": "Infernite Leggings",
+    "item.subterra.infernite_boots": "Infernite Boots",
+
+    "item.subterra.infernite_sword": "Infernite Sword",
+    "item.subterra.infernite_pickaxe": "Infernite Pickaxe",
+    "item.subterra.infernite_drill": "Infernite Drill",
+    "item.subterra.infernite_axe": "Infernite Axe",
+    "item.subterra.infernite_shovel": "Infernite Shovel",
+    "item.subterra.infernite_hoe": "Infernite Hoe",
+
+
+    "item.subterra.drill_engine": "Drill Engine",
+    "item.subterra.drill_engine_tier_1": "Drill Engine Tier I",
+    "item.subterra.drill_engine_tier_2": "Drill Engine Tier II",
+    "item.subterra.drill_engine_tier_3": "Drill Engine Tier III",
+    "item.subterra.drill_engine_tier_4": "Drill Engine Tier IV",
+    "item.subterra.drill_engine_tier_5": "Drill Engine Tier V",
+
+    "item.subterra.fuel_tank": "Fuel Tank",
+    "item.subterra.fuel_tank_tier_1": "Fuel Tank Tier I",
+    "item.subterra.fuel_tank_tier_2": "Fuel Tank Tier II",
+    "item.subterra.fuel_tank_tier_3": "Fuel Tank Tier III",
+    "item.subterra.fuel_tank_tier_4": "Fuel Tank Tier IV",
+
+    "item.subterra.empty_barrel": "Empty Barrel",
+    "item.subterra.oil_barrel": "Oil Barrel",
+    "block.subterra.drill_upgrade_station": "Drill Upgrade Station",
+
+
+    "item.subterra.diamond_drill": "Diamond Drill",
+    "item.subterra.netherite_drill": "Netherite Drill",
+
+
+    "item.subterra.basic_drill": "Basic Drill",
+    "item.subterra.upgraded_drill": "Upgraded Drill",
+
+    "itemgroup.subterra_group": "Subterra Group",
+    "itemgroup.drill_group": "Drill Group"
+}
