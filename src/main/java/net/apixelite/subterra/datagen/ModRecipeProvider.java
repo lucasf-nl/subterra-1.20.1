@@ -152,6 +152,69 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             .offerTo(exporter, new Identifier("fuel_tank_tier_4"));
 
 
+        // Drills
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.DIAMOND_DRILL)
+            .pattern("PD ")
+            .pattern("DTB")
+            .pattern(" BE")
+            .input('D', Items.DIAMOND)
+            .input('P', Items.DIAMOND_PICKAXE)
+            .input('B', Items.IRON_BLOCK)
+            .input('E', ModItems.DRILL_ENGINE)
+            .input('T', ModItems.FUEL_TANK)
+            .criterion(hasItem(ModItems.FUEL_TANK), conditionsFromItem(ModItems.FUEL_TANK))
+            .criterion(hasItem(ModItems.DRILL_ENGINE), conditionsFromItem(ModItems.DRILL_ENGINE))
+            .offerTo(exporter, new Identifier("diamond_drill"));
+
+            ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.NETHERITE_DRILL)
+            .pattern("PN ")
+            .pattern("NDB")
+            .pattern(" BE")
+            .input('N', Items.NETHERITE_INGOT)
+            .input('P', Items.NETHERITE_PICKAXE)
+            .input('B', Items.IRON_BLOCK)
+            .input('E', ModItems.DRILL_ENGINE)
+            .input('D', ModItems.DIAMOND_DRILL)
+            .criterion(hasItem(ModItems.DIAMOND_DRILL), conditionsFromItem(ModItems.DIAMOND_DRILL))
+            .offerTo(exporter, new Identifier("netherite_drill"));
+
+            ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.ENDERITE_DRILL)
+            .pattern("SI ")
+            .pattern("IDB")
+            .pattern(" BE")
+            .input('B', Items.IRON_BLOCK)
+            .input('I', ModItems.ENDERITE_INGOT)
+            .input('S', ModItems.ENDERITE_STICK)
+            .input('E', ModItems.DRILL_ENGINE)
+            .input('D', ModItems.NETHERITE_DRILL)
+            .criterion(hasItem(ModItems.DIAMOND_DRILL), conditionsFromItem(ModItems.NETHERITE_DRILL))
+            .offerTo(exporter, new Identifier("enderite_drill"));
+
+            ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.ARAGONITE_DRILL)
+            .pattern("SI ")
+            .pattern("IDB")
+            .pattern(" BE")
+            .input('B', Items.DIAMOND_BLOCK)
+            .input('I', ModItems.ARAGONITE_INGOT)
+            .input('S', ModItems.ARAGONITE_STICK)
+            .input('E', ModItems.DRILL_ENGINE)
+            .input('D', ModItems.ENDERITE_DRILL)
+            .criterion(hasItem(ModItems.DIAMOND_DRILL), conditionsFromItem(ModItems.ENDERITE_DRILL))
+            .offerTo(exporter, new Identifier("aragonite_drill"));
+
+            ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.INFERNITE_DRILL)
+            .pattern("SI ")
+            .pattern("IDB")
+            .pattern(" BE")
+            .input('B', Items.OBSIDIAN)
+            .input('I', ModItems.INFERNITE_INGOT)
+            .input('S', ModItems.INFERNITE_STICK)
+            .input('E', ModItems.DRILL_ENGINE)
+            .input('D', ModItems.ARAGONITE_DRILL)
+            .criterion(hasItem(ModItems.DIAMOND_DRILL), conditionsFromItem(ModItems.ARAGONITE_DRILL))
+            .offerTo(exporter, new Identifier("infernite_drill"));
+
+        
         // Smelting
         OreSmeltingRecipe(ENDERITE_SMELTABLES, ModItems.ENDERITE_INGOT, 2.0f, 200, "enderite", exporter);
         OreSmeltingRecipe(ARAGONITE_SMELTABLES, ModItems.ARAGONITE_INGOT, 4.0f, 200, "aragonite", exporter);
