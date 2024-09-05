@@ -99,16 +99,6 @@ public class ModItemGroups {
                 
             }).build());
     
-    public static final ItemGroup DRILL_GROUP = Registry.register(Registries.ITEM_GROUP,
-        new Identifier(Subterra.MOD_ID, "drill_group"),
-        FabricItemGroup.builder().displayName(Text.translatable("itemgroup.drill_group"))
-            .icon(() -> new ItemStack(ModItems.BASIC_DRILL)).entries((displayContext, entries) -> {
-            
-            entries.add(ModItems.BASIC_DRILL);
-            entries.add(ModItems.UPGRADED_DRILL);
-
-            }).build());
-    
     public static void registerItemGroups() {
         Subterra.LOGGER.info("Registering Item Groups for " + Subterra.MOD_ID);
     }

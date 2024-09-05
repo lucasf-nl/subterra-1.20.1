@@ -133,12 +133,6 @@ public class ModItems {
     public static final Item EMPTY_BARREL = registerItem("empty_barrel", new Item(new FabricItemSettings().maxCount(16)));
     public static final Item OIL_BARREL = registerItem("oil_barrel", new Item(new FabricItemSettings().maxCount(1)));
     
-    // 3D DRILLS
-    public static final Item BASIC_DRILL = registerItem("basic_drill", 
-    new DrillItem(ModToolMaterial.DRILL_MATERIAL, 10, 1, -2.8f, CustomRarity.COMMON, new FabricItemSettings()));
-    public static final Item UPGRADED_DRILL = registerItem("upgraded_drill", 
-    new DrillItem(ModToolMaterial.DRILL_MATERIAL, 25, 2, -2.8f, CustomRarity.COMMON, new FabricItemSettings()));
-    
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Subterra.MOD_ID, name), item);
     }

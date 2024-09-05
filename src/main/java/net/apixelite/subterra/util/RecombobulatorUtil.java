@@ -27,7 +27,7 @@ public class RecombobulatorUtil {
                 case SPECIAL:
                     return rarity = CustomRarity.VERY_SPECIAL;
                 default:
-                    return rarity = CustomRarity.VERY_SPECIAL;
+                    return rarity = CustomRarity.COMMON;
             }
         }
     }

@@ -37,7 +37,7 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             .input('F', Items.FIRE_CHARGE)
             .input('T', ModItems.FUEL_TANK)
             .criterion(hasItem(Items.IRON_BLOCK), conditionsFromItem(Items.IRON_BLOCK))
-            .offerTo(exporter, new Identifier("drill_engine"    ));
+            .offerTo(exporter, new Identifier("drill_engine"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.DRILL_ENGINE_TIER_I)
             .pattern("III")

@@ -77,10 +77,6 @@
     "item.subterra.diamond_drill": "Diamond Drill",
     "item.subterra.netherite_drill": "Netherite Drill",
 
-
-    "item.subterra.basic_drill": "Basic Drill",
-    "item.subterra.upgraded_drill": "Upgraded Drill",
-
     "itemgroup.subterra_group": "Subterra Group",
     "itemgroup.drill_group": "Drill Group"
 }
