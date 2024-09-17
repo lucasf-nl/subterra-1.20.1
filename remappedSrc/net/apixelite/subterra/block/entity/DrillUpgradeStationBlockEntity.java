@@ -195,9 +195,10 @@ public class DrillUpgradeStationBlockEntity extends BlockEntity implements Exten
     // Sets the module on the drill
     private void setModuleOnDrill(String module, int slot) {
         String name = getStack(slot).getName().getString();
-        int level = DrillItem.getModule(name);
-        DrillItem.editNbtData(getStack(DRILL_SLOT), true, level, module, name);
+        int moduleLevel = DrillItem.getModule(name);
+        DrillItem.editNbtData(getStack(DRILL_SLOT), true, moduleLevel, module, name);
         DrillItem.addModuleToDrill(module, name, getStack(slot));
+        Subterra.LOGGER.info("Name is: " + name);
         moduleRemoved(name, false);
     }
 

@@ -43,13 +43,18 @@ public class FuelTank extends Item {
         super.appendTooltip(stack, world, tooltip, context);
     }
 
-    public static int getFuel(int level) {
-        if (level >= 2) {
-            return (int) (10000 * (2.5 * Math.pow(2, (level - 2))));
-        } else if (level == 1) {
-            return 10000;
-        } else {
-            return 0;
+    public static int getFuel(String name) {
+        switch (name) {
+            case "Fuel Tank Tier I":
+                return 10000;
+            case "Fuel Tank Tier II":
+                return 25000;
+            case "Fuel Tank Tier III":
+                return 50000;
+            case "Fuel Tank Tier IV":
+                return 100000;
+            default:
+                return 3000;
         }
     }
 

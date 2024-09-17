@@ -12,13 +12,13 @@ import net.minecraft.world.World;
 
 public class DrillEngine extends Item {
 
-    private float miningSpeed;
     private CustomRarity rarity;
+    private int level;
 
-    public DrillEngine(float miningSpeed, CustomRarity rarity, Settings settings) {
+    public DrillEngine(int level, CustomRarity rarity, Settings settings) {
         super(settings);
-        this.miningSpeed = miningSpeed;
         this.rarity = rarity;
+        this.level = level;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class DrillEngine extends Item {
             tooltip.add(Text.literal(""));
             tooltip.add(Text.literal("§7Part Type: §6Drill Engine"));
             tooltip.add(Text.literal(""));
-            tooltip.add(Text.literal("§7Gives: §6" + ((int) this.miningSpeed) + " Mining Speed"));
+            tooltip.add(Text.literal("§7Gives: §6" + (getMiningSpeed(this.level)) + " Mining Speed"));
             tooltip.add(Text.literal(""));
         }
         tooltip.add(Text.literal("§l" + this.rarity).formatted(this.rarity.formatting));
@@ -39,21 +39,11 @@ public class DrillEngine extends Item {
         super.appendTooltip(stack, world, tooltip, context);
     }
 
-    public static int getMiningSpeed(String name) {
-        switch (name) {
-            case "Drill Engine Tier I":
-                return 10;
-            case "Drill Engine Tier II":
-                return 25;
-            case "Drill Engine Tier III":
-                return 50;
-            case "Drill Engine Tier IV":
-                return 100;
-            case "Drill Engine Tier V":
-                return 250;
-            default:
-                return 0;
+    public static int getMiningSpeed(int level) {
+        if (level != 0) {
+            return (int) (5 + 2.5 * (level * level - level) + 5);
+        } else {
+            return 0;
         }
     }
-
 }

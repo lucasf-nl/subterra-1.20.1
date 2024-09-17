@@ -10,19 +10,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
-public class FuelTank extends Item {
+public class DrillEngine extends Item {
 
-    private int fuelCapacity;
+    private float miningSpeed;
     private CustomRarity rarity;
 
-    public FuelTank(int fuelCapacity, CustomRarity rarity, Settings settings) {
+    public DrillEngine(float miningSpeed, CustomRarity rarity, Settings settings) {
         super(settings);
-        this.fuelCapacity = fuelCapacity;
+        this.miningSpeed = miningSpeed;
         this.rarity = rarity;
-    }
-
-    public int getFuelCapacity(ItemStack stack) {
-        return this.fuelCapacity;
     }
 
     @Override
@@ -30,12 +26,12 @@ public class FuelTank extends Item {
         tooltip.clear();
 
         tooltip.add(Text.empty().append(this.getName()).formatted(this.rarity.formatting));
-        if (!stack.isOf(ModItems.FUEL_TANK)) {
+        if (!stack.isOf(ModItems.DRILL_ENGINE)) {
             tooltip.add(Text.literal("§8Drill Part"));
             tooltip.add(Text.literal(""));
-            tooltip.add(Text.literal("§7Part Type: §6Fuel Tank"));
+            tooltip.add(Text.literal("§7Part Type: §6Drill Engine"));
             tooltip.add(Text.literal(""));
-            tooltip.add(Text.literal("§7Increases Fuel Capacity To: §2" + (this.fuelCapacity / 1000) + ".000"));
+            tooltip.add(Text.literal("§7Gives: §6" + ((int) this.miningSpeed) + " Mining Speed"));
             tooltip.add(Text.literal(""));
         }
         tooltip.add(Text.literal("§l" + this.rarity).formatted(this.rarity.formatting));
@@ -43,15 +39,21 @@ public class FuelTank extends Item {
         super.appendTooltip(stack, world, tooltip, context);
     }
 
-    public static int getFuel(int level) {
-        if (level >= 2) {
-            return (int) (10000 * (2.5 * Math.pow(2, (level - 2))));
-        } else if (level == 1) {
-            return 10000;
-        } else {
-            return 0;
+    public static int getMiningSpeed(String name) {
+        switch (name) {
+            case "Drill Engine Tier I":
+                return 10;
+            case "Drill Engine Tier II":
+                return 25;
+            case "Drill Engine Tier III":
+                return 50;
+            case "Drill Engine Tier IV":
+                return 100;
+            case "Drill Engine Tier V":
+                return 250;
+            default:
+                return 0;
         }
     }
-
 
 }

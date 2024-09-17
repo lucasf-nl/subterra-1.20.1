@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import net.apixelite.subterra.util.romannumeralconverter.RomanNumeralConverter;
-
 import net.apixelite.subterra.Subterra;
 import net.apixelite.subterra.util.CustomRarity;
 import net.apixelite.subterra.util.RecombobulatorUtil;
@@ -66,37 +64,37 @@ public class DrillItem extends PickaxeItem {
 
 // NBT FUNCTIONS
     // edits the nbt on a item
-    public static void editNbtData(ItemStack item, boolean value, int level, String module, String name) {
-        addOrRemoveNbtFromDrill(item, value, level, module, name);
+    public static void editNbtData(ItemStack item, boolean value, int value2, String module, String name) {
+        addOrRemoveNbtFromDrill(item, value, value2, module, name);
     }
     
     // adds nbt to the drill
-    private static void addOrRemoveNbtFromDrill(ItemStack item, boolean value, int level, String module, String name) {
+    private static void addOrRemoveNbtFromDrill(ItemStack item, boolean value, int value2, String module, String name) {
         NbtCompound nbtData = new NbtCompound();
         ItemStack drill = item;
         switch (module) {
             case "engine":
                 hasNbtEngine = value;
-                drillHasEngine = level;
-                miningSpeed = getMininSpeedAddition(level);
+                drillHasEngine = value2;
+                miningSpeed = getMininSpeedAddition(name);
                 engine = name;
                 break;
             case "tank":
                 hasNbtTank = value;
-                drillHasTank = level;
-                maxFuel = getTankFuel(level);
+                drillHasTank = value2;
+                maxFuel = getTankFuel(name);
                 fuel = maxFuel;
                 tank = name;
                 break;
             case "fuel":
-                maxFuel = level;
-                fuel = level;
+                maxFuel = value2;
+                fuel = value2;
                 break;
             case "decrease_fuel":
-                fuel = level;
+                fuel = value2;
                 break;
             case "speed":
-                miningSpeed = level;
+                miningSpeed = value2;
                 break;
             default:
                 break;
@@ -239,20 +237,31 @@ public class DrillItem extends PickaxeItem {
 // MODULE FUNCTIONS
     // returns the module installed
     public static int getModule(String item) {
-        String[] name = item.split(" ");
-
-        if (findString(name)) {
-            int level = RomanNumeralConverter.romanToInt(name[3]);
-            return level;
-        } else {
-            if (item == "has_engine") {
+        switch (item) {
+            case "Drill Engine Tier I":
+             return 1;
+            case "Drill Engine Tier II":
+                return 2;
+            case "Drill Engine Tier III":
+                return 3;
+            case "Drill Engine Tier IV":
+                return 4;
+            case "Drill Engine Tier V":
+                return 5;
+            case "Fuel Tank Tier I":
+                return 1;
+            case "Fuel Tank Tier II":
+                return 2;
+            case "Fuel Tank Tier III":
+                return 3;
+            case "Fuel Tank Tier IV":
+                return 4;
+            case "has_engine":
                 return drillHasEngine;
-            } else if (item == "has_tank") {
+            case "has_tank":
                 return drillHasTank;
-            } else {
-                Subterra.LOGGER.info("Failed at function getModule() {line 242}");
+            default:
                 return 0;
-            }
         }
     }
     
@@ -282,18 +291,29 @@ public class DrillItem extends PickaxeItem {
 
     // adds a module to the item
     public static void addModuleToDrill(String module, String name, ItemStack item) {
-        String[] itemName = name.split(" ");
-        int level = RomanNumeralConverter.romanToInt(itemName[3]);
         
         // Adds a engine to the item
         if (module == "engine") {
             engine = item.getName().getString();
-            drillHasEngine = level;
+            switch (name) {
+                case "Drill Engine Tier I" -> drillHasEngine = 1;
+                case "Drill Engine Tier II" -> drillHasEngine = 2;
+                case "Drill Engine Tier III" -> drillHasEngine = 3;
+                case "Drill Engine Tier IV" -> drillHasEngine = 4;
+                case "Drill Engine Tier V" -> drillHasEngine = 5;
+                default -> Subterra.LOGGER.info("Failed to change Engine " + name);
+            }
         } 
         // Adds a tank to the item
         else if (module == "tank") {
             tank = item.getName().getString();
-            drillHasTank = level;
+            switch (name) {
+                case "Fuel Tank Tier I" -> drillHasTank = 1;
+                case "Fuel Tank Tier II" -> drillHasTank = 2;
+                case "Fuel Tank Tier III" -> drillHasTank = 3;
+                case "Fuel Tank Tier IV" -> drillHasTank = 4;
+                default -> Subterra.LOGGER.info("Failed to change Tank " + name);
+            }
         } else {
             return;
         }
@@ -302,16 +322,16 @@ public class DrillItem extends PickaxeItem {
 
 
 // MINING SPEED FUNCTIONS
-    public static int getMininSpeedAddition(int level) {
-        return DrillEngine.getMiningSpeed(level);
+    public static int getMininSpeedAddition(String name) {
+        return DrillEngine.getMiningSpeed(name);
     }
 
 
 
 // FUEL FUNCTIONS   
     // sets the fuel to the new max fuel
-    public static int getTankFuel(int level) {
-        return FuelTank.getFuel(level);
+    public static int getTankFuel(String name) {
+        return FuelTank.getFuel(name);
     }
     
     // resets the fuel to the base value
@@ -386,17 +406,6 @@ public class DrillItem extends PickaxeItem {
     }
     @Override
     public boolean isDamageable() {
-        return false;
-    }
-
-    private static boolean findString(String[] list) {
-        String searchString = "Tier";
-
-        for (String item : list) {
-            if (item.equals(searchString)) {
-                return true;
-            }
-        }
         return false;
     }
 

@@ -117,11 +117,11 @@ public class ModItems {
     // DRILL PARTS
     // DRILL ENGINES
     public static final Item DRILL_ENGINE = registerItem("drill_engine", new DrillEngine(0, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
-    public static final Item DRILL_ENGINE_TIER_I = registerItem("drill_engine_tier_1", new DrillEngine(1, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
-    public static final Item DRILL_ENGINE_TIER_II = registerItem("drill_engine_tier_2", new DrillEngine(2, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
-    public static final Item DRILL_ENGINE_TIER_III = registerItem("drill_engine_tier_3", new DrillEngine(3, CustomRarity.EPIC, new FabricItemSettings().maxCount(1)));
-    public static final Item DRILL_ENGINE_TIER_IV = registerItem("drill_engine_tier_4", new DrillEngine(4, CustomRarity.LEGENDARY, new FabricItemSettings().maxCount(1)));
-    public static final Item DRILL_ENGINE_TIER_V = registerItem("drill_engine_tier_5", new DrillEngine(5, CustomRarity.MYTHIC, new FabricItemSettings().maxCount(1)));
+    public static final Item DRILL_ENGINE_TIER_I = registerItem("drill_engine_tier_1", new DrillEngine(12.5f, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
+    public static final Item DRILL_ENGINE_TIER_II = registerItem("drill_engine_tier_2", new DrillEngine(25, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
+    public static final Item DRILL_ENGINE_TIER_III = registerItem("drill_engine_tier_3", new DrillEngine(50, CustomRarity.EPIC, new FabricItemSettings().maxCount(1)));
+    public static final Item DRILL_ENGINE_TIER_IV = registerItem("drill_engine_tier_4", new DrillEngine(100, CustomRarity.LEGENDARY, new FabricItemSettings().maxCount(1)));
+    public static final Item DRILL_ENGINE_TIER_V = registerItem("drill_engine_tier_5", new DrillEngine(250, CustomRarity.MYTHIC, new FabricItemSettings().maxCount(1)));
     
     // FUEL TANKS
     public static final Item FUEL_TANK = registerItem("fuel_tank", new FuelTank(0, CustomRarity.RARE, new FabricItemSettings().maxCount(1)));
