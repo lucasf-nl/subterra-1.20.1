@@ -34,7 +34,6 @@ public class FuelTank extends Item {
             tooltip.add(Text.literal("§8Drill Part"));
             tooltip.add(Text.literal(""));
             tooltip.add(Text.literal("§7Part Type: §6Fuel Tank"));
-            tooltip.add(Text.literal(""));
             tooltip.add(Text.literal("§7Increases Fuel Capacity To: §2" + (this.fuelCapacity / 1000) + ".000"));
             tooltip.add(Text.literal(""));
         }
@@ -45,13 +44,10 @@ public class FuelTank extends Item {
 
     public static int getFuel(int level) {
         if (level >= 2) {
+            // 10000 * 2,5 * 2^(x-2)
             return (int) (10000 * (2.5 * Math.pow(2, (level - 2))));
-        } else if (level == 1) {
-            return 10000;
         } else {
-            return 0;
+            return (int) 10000 * level;
         }
     }
-
-
 }

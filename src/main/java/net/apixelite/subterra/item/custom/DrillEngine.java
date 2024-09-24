@@ -30,7 +30,6 @@ public class DrillEngine extends Item {
             tooltip.add(Text.literal("§8Drill Part"));
             tooltip.add(Text.literal(""));
             tooltip.add(Text.literal("§7Part Type: §6Drill Engine"));
-            tooltip.add(Text.literal(""));
             tooltip.add(Text.literal("§7Gives: §6" + (getMiningSpeed(this.level)) + " Mining Speed"));
             tooltip.add(Text.literal(""));
         }
@@ -41,6 +40,7 @@ public class DrillEngine extends Item {
 
     public static int getMiningSpeed(int level) {
         if (level != 0) {
+            // 5 + 2.5 * ((x * x - x) + 5)
             return (int) (5 + 2.5 * (level * level - level) + 5);
         } else {
             return 0;
