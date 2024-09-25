@@ -170,11 +170,11 @@ public class DrillItem extends PickaxeItem {
         // Fuel tank
         if (stack.getNbt().getBoolean("subterra.has_tank")) {
             tooltip.add(Text.literal("§a" + stack.getNbt().getString("subterra.tank_name")));
-            tooltip.add(Text.literal("§7Increace your fuel capacity"));
+            tooltip.add(Text.literal("§7Increase your fuel capacity"));
             tooltip.add(Text.literal("§7to: §2" + stack.getNbt().getInt("subterra.max_fuel")));
         } else {
             tooltip.add(Text.literal("§7Fuel Tank: §cNot Installed"));
-            tooltip.add(Text.literal("§7Increace your fuel capacity"));
+            tooltip.add(Text.literal("§7Increase your fuel capacity"));
             tooltip.add(Text.literal("§7with tank installed"));
         }
         tooltip.add(Text.literal(""));
@@ -186,7 +186,7 @@ public class DrillItem extends PickaxeItem {
             tooltip.add(Text.literal("§6" + stack.getNbt().getInt("subterra.mining_speed") + " Mining Speed"));
         } else {
             tooltip.add(Text.literal("§7Drill Engine: §cNot Installed"));
-            tooltip.add(Text.literal("§7Increace your mining speed"));
+            tooltip.add(Text.literal("§7Increase your mining speed"));
             tooltip.add(Text.literal("§7with engine installed."));
         }
         tooltip.add(Text.literal(""));
@@ -196,7 +196,7 @@ public class DrillItem extends PickaxeItem {
             tooltip.add(Text.literal("§a" + upgrade));
         } else {
             tooltip.add(Text.literal("§7Upgrade Module: §cNot Installed"));
-            tooltip.add(Text.literal("§7Increace a certain stat with"));
+            tooltip.add(Text.literal("§7Increase a certain stat with"));
             tooltip.add(Text.literal("§7module installed"));
         }
         tooltip.add(Text.literal(""));
