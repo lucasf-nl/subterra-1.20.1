@@ -184,7 +184,7 @@ public class DrillItem extends PickaxeItem {
             tooltip.add(Text.literal("§6" + stack.getNbt().getInt("subterra.mining_speed") + " Mining Speed"));
         } else {
             tooltip.add(Text.literal("§7Drill Engine: §cNot Installed"));
-            tooltip.add(Text.literal("§7IncreaSe your mining speed"));
+            tooltip.add(Text.literal("§7Increase your mining speed"));
             tooltip.add(Text.literal("§7with engine installed."));
         }
         tooltip.add(Text.literal(""));
